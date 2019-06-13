@@ -1,0 +1,48 @@
+
+{% extends "layout.html"%}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+        body{
+          background-color:palevioletred;
+        }
+      </style>
+
+
+<div class="container">
+    <h1>View your Product Details</h1>
+    <form action="/view" method="POST">
+      
+<div class="form-group"><h5>View</h5>
+<input type="text" name="prodtitle" class="form-control" placeholder="Product Title"  required>
+
+  <button onclick="view()" class="btn btn-primary"> View</button>
+  
+    {% for ri in res %}
+
+               
+    <table>
+            <tr>
+        <tr>
+         <td> Product Title : {{ri[0]}}</td></tr>
+         <tr><td>Product Price : {{ri[1]}}</td></tr>
+         <tr><td>Product Category : {{ri[2]}}</td></tr>
+         <tr><td>Product Price  : {{ri[3]}}</td></tr>
+        </tr>
+    </table>
+
+    {% endfor %}
+   
+</form>
+
+</div>
+</div>
+</head>
+</html>
+
+{% endblock %}

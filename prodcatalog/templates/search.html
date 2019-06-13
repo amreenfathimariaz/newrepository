@@ -1,0 +1,59 @@
+{% extends "layout.html"%}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+        body{
+          background-color:palevioletred;
+        }
+      </style>
+
+
+<div class="container">
+    <h1>Search</h1>
+    <form action="/search" method="POST">
+      
+<div class="form-group"><h5>Search here!!</h5>
+  
+  
+        <select name="prodtitle">
+                <option value="aa">Check here</option>
+                <option value="samsung">Samsung</option>
+                <option value="bata">Bata</option>
+                <option value="hudaBeauty">Hudabeauty</option>
+                <option value="nike">Nike</option>
+                <option value="lays">Lays</option>
+              </select>
+    
+    <button onclick="search()" class="btn btn-primary"><i class="fa fa-search">Search</i></button>
+    {% for r in row %}
+    <div class="w3-container"> 
+            
+        
+    <table>
+            <tr>
+        <tr>
+         <td> Product Title : {{r[0]}}</td></tr>
+         <tr><td>Product Price : {{r[1]}}</td></tr>
+         <tr><td>Product Category : {{r[2]}}</td></tr>
+         <tr><td>Product Price  : {{r[3]}}</td></tr>
+        </tr>
+    </table>
+    
+</div>
+
+    {% endfor %}
+   
+    
+</form>
+
+</div>
+</div>
+</head>
+</html>
+
+{% endblock %}
